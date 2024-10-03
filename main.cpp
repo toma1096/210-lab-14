@@ -19,7 +19,15 @@ class Color{
     //print method
     public:
     //constructor
+    
+    //default constructor
+    Color(){setR(0);setG(0);setB(0);}
+    //parameter constructor
     Color(int R, int G, int B){setR(R);setG(G);setB(B);}
+    //partial constructor
+    Color(int R, int G){setR(R);setG(G);setB(0);}
+    Color(int R){setR(R);setG(0);setB(0);}
+
     void printColor(){
         cout<<"R: "<<r<<endl;
         cout<<"G: "<<g<<endl;
@@ -30,9 +38,9 @@ class Color{
 
 int main(){
     Color *C1 = new Color(1,2,3);
-    Color *C2 = new Color(100,222,30);
-    Color *C3 = new Color(29,80,240);
-    Color *C4 = new Color(190,5,77);
+    Color *C2 = new Color();
+    Color *C3 = new Color(29,240);
+    Color *C4 = new Color(190);
     cout<<"Color 1\n";
     C1->printColor();
     cout<<"Color 2\n";
